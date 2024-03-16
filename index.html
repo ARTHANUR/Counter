@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Counter using HTML</h1>
+    <span>Your current count is : </span>
+    <span class="count"></span>
+    <p class="error-msg"> </p>
+    <div>
+        <button onclick="decrement()">Decrement</button>
+        <button onclick="increment()">Increment</button>
+        <button onclick="clearCount()">Clear</button>
+    </div>
+
+    <script>
+        let cnt = 0;
+        let count = document.querySelector(".count");
+        let error = document.querySelector(".error-msg");
+
+
+        count.innerHTML = cnt;
+
+        function increment() {
+            if (cnt < 0) {
+                cnt = 0;
+                let error = document.querySelector(".error-msg");
+                error.innerHTML = "Error : Cannot go below 0 ";
+                return;
+            }
+            error.innerHTML = "";
+            count.innerHTML = ++cnt;
+
+        }
+
+        function decrement() {
+            if (cnt <= 0) {
+                cnt = 0;
+                error.innerHTML = "Error : Cannot go below 0 ";
+                return;
+            }
+            error.innerHTML = "";
+            count.innerHTML = --cnt;
+
+        }
+
+        function clearCount() {
+            error.innerHTML = "";
+            cnt = 0;
+            count.innerHTML = cnt;
+        }
+
+
+    </script>
+</body>
+
+</html>
