@@ -6,19 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Counter</title>
     <style>
+        * {
+            font-family: sans-serif;
+            font-weight: 500;
+            background-color: black;
+            color: white;
+        }
 
+        h1 {
+            font-size: 3rem;
+        }
+
+        .container {
+            width: 100vw;
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 5rem;
+        }
+
+        .content {
+            font-size: 1rem;
+            border-bottom: 2px solid white;
+            word-spacing: 0.3rem;
+            letter-spacing: 0.1rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .error-msg {
+            color: rgba(255, 0, 0, 0.617);
+            font-size: small;
+            height: 2rem;
+
+        }
+
+        .btn {
+            width: 7rem;
+            height: 2.5rem;
+            background-color: white;
+            color: black;
+            font-size: 1rem;
+            border: none;
+            outline: none;
+        }
+
+        .clear {
+            background-color: black;
+            border: 1px solid white;
+            color: white;
+        }
+
+        .btns {
+            display: flex;
+            width: 30%;
+            justify-content: space-between;
+
+        }
     </style>
 </head>
 
 <body>
-    <h1>Counter using HTML</h1>
-    <span>Your current count is : </span>
-    <span class="count"></span>
-    <p class="error-msg"> </p>
-    <div>
-        <button onclick="decrement()">Decrement</button>
-        <button onclick="increment()">Increment</button>
-        <button onclick="clearCount()">Clear</button>
+    <div class="container">
+        <h1>Counter using HTML</h1>
+        <div>
+            <span class="content ">Your current count is : </span>
+            <span class="count content"></span>
+        </div>
+
+        <p class="error-msg"> </p>
+        <div class="btns">
+            <button onclick="decrement()" class="btn">Decrement</button>
+            <button onclick="increment()" class="btn">Increment</button>
+            <button onclick="clearCount()" class="btn clear">Clear</button>
+        </div>
     </div>
 
     <script>
